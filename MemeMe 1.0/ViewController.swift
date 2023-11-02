@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var shootButton: UIBarButtonItem!
+    @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,8 +25,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     
-    // MARK: Actions
+    // MARK: Camera actions
 
+    // The app displays the image picker when the Album button is pressed.
     @IBAction func pickFromGallery(_ sender: Any) {
         print("Pick from gallery")
         openPicker(source: .photoLibrary)
@@ -43,6 +45,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePicker.sourceType = source
         imagePicker.delegate = self
         present(imagePicker, animated: true, completion: nil)
+    }
+    
+    // The chosen image from the camera or the photo album is displayed and scaled properly with AspectFit to fit the device screen.
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        print("imagePickerController()")
+        if let image = info[.originalImage] as? UIImage {
+            print("Image is present")
+            imageView.image = image
+        } else {
+            print("Some error occurred")
+        }
+        
+        dismiss(animated: true, completion: nil)
     }
 
 }
