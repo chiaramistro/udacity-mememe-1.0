@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet weak var shareButton: UIBarButtonItem!
     @IBOutlet weak var shootButton: UIBarButtonItem!
     @IBOutlet weak var imageView: UIImageView!
     
@@ -30,6 +31,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         topTextField.text = "TOP"
         bottomTextField.text = "BOTTOM"
         
+        toggleImageEditorUi(isHidden: true)
+        
         topTextField.defaultTextAttributes = memeTextAttributes
         bottomTextField.defaultTextAttributes = memeTextAttributes
     }
@@ -41,6 +44,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         shootButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
     }
     
+    func toggleImageEditorUi(isHidden: Bool) {
+        topTextField.isHidden = isHidden
+        bottomTextField.isHidden = isHidden
+        shareButton.isHidden = isHidden
+    }
     
     // MARK: Camera actions
 
@@ -70,6 +78,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         if let image = info[.originalImage] as? UIImage {
             print("Image is present")
             imageView.image = image
+            toggleImageEditorUi(isHidden: false)
         } else {
             print("Some error occurred")
         }
@@ -77,5 +86,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         dismiss(animated: true, completion: nil)
     }
 
+    // MARK: Share actions
+    
+    // The app has a social share button that uses the “Action” icon built into iOS.
+    @IBAction func shareImage(_ sender: Any) {
+        print("shareImage()")
+        
+        let image = UIImage()
+        
+        let nextController = UIActivityViewController(
+        activityItems: [imageView.image], applicationActivities: nil)
+        present(nextController, animated: true, completion: nil)
+    }
+    
 }
 

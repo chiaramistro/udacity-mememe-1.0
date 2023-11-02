@@ -25,6 +25,12 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Nup-wN-jjZ"/>
+                                    <barButtonItem title="Share" id="kid-7R-2CG">
+                                        <connections>
+                                            <action selector="shareImage:" destination="BYZ-38-t0r" id="AOQ-vP-0Re"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Z8I-G1-u9w"/>
                                     <barButtonItem title="Shoot" id="JfQ-7y-KsD">
                                         <connections>
                                             <action selector="shootFromCamera:" destination="BYZ-38-t0r" id="P0E-4G-7ef"/>
@@ -70,6 +76,7 @@
                     <connections>
                         <outlet property="bottomTextField" destination="Q4h-ZS-788" id="4Lf-ii-sdS"/>
                         <outlet property="imageView" destination="KNC-eb-HaQ" id="wSt-kl-HkP"/>
+                        <outlet property="shareButton" destination="kid-7R-2CG" id="7YP-ol-Tes"/>
                         <outlet property="shootButton" destination="JfQ-7y-KsD" id="R6u-ke-dLk"/>
                         <outlet property="topTextField" destination="NSE-Pt-WWm" id="bx5-0S-sbW"/>
                     </connections>
