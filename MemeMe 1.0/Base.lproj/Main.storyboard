@@ -42,6 +42,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="AMk-kc-ZZu" secondAttribute="bottom" id="wmu-XJ-DHw"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="shootButton" destination="JfQ-7y-KsD" id="R6u-ke-dLk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
