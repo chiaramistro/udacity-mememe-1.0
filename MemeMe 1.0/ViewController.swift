@@ -99,5 +99,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         present(nextController, animated: true, completion: nil)
     }
     
+    func saveMeme(memeImage: UIImage) {
+        let meme = Meme(topText: topTextField.text, bottomText: bottomTextField.text, orginalImage: imageView.image, memedImage: memeImage)
+    }
+    
 }
 
