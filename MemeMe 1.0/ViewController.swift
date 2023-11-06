@@ -94,10 +94,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBAction func shareImage(_ sender: Any) {
         print("shareImage()")
         
-        let image = UIImage()
-        
+        let newMeme = generateMemedImage()
+
         let nextController = UIActivityViewController(
-        activityItems: [imageView.image], applicationActivities: nil)
+        activityItems: [newMeme], applicationActivities: nil)
         present(nextController, animated: true, completion: nil)
         
         // The meme is saved in the activity view controller’s completionWithItemsHandler. The meme is not saved if the user cancels the activity view controller.
@@ -122,6 +122,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
     
+    func generateMemedImage() -> UIImage {
+        UIGraphicsBeginImageContext(imageView.frame.size)
+
+        view.drawHierarchy(in: imageView.frame, afterScreenUpdates: true)
+
+        // Snapshot Image From My View
+        let memedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+
+        UIGraphicsGetImageFromCurrentImageContext()
+        
+        return memedImage
     }
     
     func saveMeme(memeImage: UIImage) {
