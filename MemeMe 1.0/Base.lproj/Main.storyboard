@@ -25,7 +25,7 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Nup-wN-jjZ"/>
-                                    <barButtonItem title="Share" id="kid-7R-2CG">
+                                    <barButtonItem title="Share" image="square.and.arrow.up" catalog="system" id="kid-7R-2CG">
                                         <connections>
                                             <action selector="shareImage:" destination="BYZ-38-t0r" id="AOQ-vP-0Re"/>
                                         </connections>
@@ -87,6 +87,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
