@@ -9,7 +9,9 @@ import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    // The app has a social share button that uses the “Action” icon built into iOS.
     @IBOutlet weak var shareButton: UIBarButtonItem!
+    
     @IBOutlet weak var shootButton: UIBarButtonItem!
     @IBOutlet weak var imageView: UIImageView!
     
@@ -88,7 +90,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     // MARK: Share actions
     
-    // The app has a social share button that uses the “Action” icon built into iOS.
+    // The share button launches the Activity View.
     @IBAction func shareImage(_ sender: Any) {
         print("shareImage()")
         
@@ -97,6 +99,29 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let nextController = UIActivityViewController(
         activityItems: [imageView.image], applicationActivities: nil)
         present(nextController, animated: true, completion: nil)
+        
+        // The meme is saved in the activity view controller’s completionWithItemsHandler. The meme is not saved if the user cancels the activity view controller.
+        nextController.completionWithItemsHandler = {
+            (activityType: UIActivity.ActivityType?,
+             completed: Bool,
+             returnedItems: [Any]?,
+             error: Error?) in
+            if let shareError = error {
+                print("Share Error: \(shareError.localizedDescription)")
+                return
+            }
+            if completed {
+                print("Share completed")
+                self.saveMeme(memeImage: newMeme)
+                self.dismiss(animated: true, completion: nil)
+                return
+            } else {
+                print("Share canceled")
+                return
+            }
+        }
+    }
+    
     }
     
     func saveMeme(memeImage: UIImage) {
