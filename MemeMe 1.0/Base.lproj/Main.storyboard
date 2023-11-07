@@ -64,9 +64,9 @@
                             <constraint firstItem="NSE-Pt-WWm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Kse-G9-MG4"/>
                             <constraint firstItem="AMk-kc-ZZu" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Swg-0z-LBh"/>
                             <constraint firstItem="KNC-eb-HaQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="Y9y-mT-9Oe"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NSE-Pt-WWm" secondAttribute="trailing" constant="16" id="YbY-Gq-vVg"/>
+                            <constraint firstAttribute="trailing" secondItem="NSE-Pt-WWm" secondAttribute="trailing" constant="16" id="YbY-Gq-vVg"/>
                             <constraint firstItem="Q4h-ZS-788" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bvJ-Vb-Zt7"/>
-                            <constraint firstItem="NSE-Pt-WWm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="g1A-ub-hcu"/>
+                            <constraint firstItem="NSE-Pt-WWm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="g1A-ub-hcu"/>
                             <constraint firstItem="AMk-kc-ZZu" firstAttribute="top" secondItem="Q4h-ZS-788" secondAttribute="bottom" constant="16" id="lTM-sf-jYV"/>
                             <constraint firstItem="KNC-eb-HaQ" firstAttribute="centerX" secondItem="AMk-kc-ZZu" secondAttribute="centerX" id="ohq-Kd-yXx"/>
                             <constraint firstItem="KNC-eb-HaQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="qtG-Tg-3CB"/>
