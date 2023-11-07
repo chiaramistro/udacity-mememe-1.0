@@ -13,6 +13,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var shareButton: UIBarButtonItem!
     
     @IBOutlet weak var shootButton: UIBarButtonItem!
+    
     @IBOutlet weak var imageView: UIImageView!
     
     // Text fields are provided for top and bottom text.
@@ -36,9 +37,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         setupTextFields()
         
         toggleImageEditorUi(isHidden: true)
-        
-        topTextField.defaultTextAttributes = memeTextAttributes
-        bottomTextField.defaultTextAttributes = memeTextAttributes
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,6 +58,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         unsubscribeFromKeyboardNotifications()
     }
     
+    // Show/Hide meme editor fields
     func toggleImageEditorUi(isHidden: Bool) {
         topTextField.isHidden = isHidden
         bottomTextField.isHidden = isHidden
@@ -80,7 +79,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         openPicker(source: .camera)
     }
 
-    
+    // Open picker based on a source parameter
     func openPicker(source: UIImagePickerController.SourceType) {
         let imagePicker = UIImagePickerController()
         imagePicker.sourceType = source
@@ -96,7 +95,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             imageView.image = image
             toggleImageEditorUi(isHidden: false)
         } else {
-            print("Some error occurred")
+            print("Some error occurred picking the image")
         }
         
         dismiss(animated: true, completion: nil)
@@ -151,6 +150,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         // No border around input field
         topTextField.borderStyle = .none
         bottomTextField.borderStyle = .none
+        
+        // Set style for field
+        topTextField.defaultTextAttributes = memeTextAttributes
+        bottomTextField.defaultTextAttributes = memeTextAttributes
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
