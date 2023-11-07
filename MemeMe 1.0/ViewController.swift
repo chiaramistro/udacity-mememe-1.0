@@ -8,9 +8,6 @@
 import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
-
-    // The app has a social share button that uses the “Action” icon built into iOS.
-    @IBOutlet weak var shareButton: UIBarButtonItem!
     
     @IBOutlet weak var shootButton: UIBarButtonItem!
     
@@ -20,7 +17,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
     
-    @IBOutlet weak var toolbar: UIToolbar!
+    @IBOutlet weak var bottomToolbar: UIToolbar!
+    @IBOutlet weak var topToolbar: UIToolbar!
     
     // The font and style used to display the meme text is easy to read: bold, all caps, white with a black outline, and shrink to fit.
     let memeTextAttributes: [NSAttributedString.Key: Any] = [
@@ -62,7 +60,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func toggleImageEditorUi(isHidden: Bool) {
         topTextField.isHidden = isHidden
         bottomTextField.isHidden = isHidden
-        shareButton.isHidden = isHidden
+        topToolbar.isHidden = isHidden
     }
     
     // MARK: Camera actions
@@ -166,6 +164,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
     // MARK: Share actions
+    // The app has a social share button that uses the “Action” icon built into iOS.
     
     // The share button launches the Activity View.
     @IBAction func shareImage(_ sender: Any) {
@@ -201,7 +200,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func generateMemedImage() -> UIImage {
         // Hide toolbar
-        toggleToolbar(isHidden: true)
+        toggleToolbars(isHidden: true)
         
         // Create snapshot for meme image
         UIGraphicsBeginImageContext(self.view.frame.size)
@@ -210,19 +209,31 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         UIGraphicsEndImageContext()
         
         // Show toolbar
-        toggleToolbar(isHidden: false)
+        toggleToolbars(isHidden: false)
         
         // Return generated meme image
         return memedImage
     }
     
-    func toggleToolbar(isHidden: Bool) {
-        toolbar.isHidden = isHidden
+    func toggleToolbars(isHidden: Bool) {
+        topToolbar.isHidden = isHidden
+        bottomToolbar.isHidden = isHidden
     }
     
     func saveMeme(memeImage: UIImage) {
         let meme = Meme(topText: topTextField.text, bottomText: bottomTextField.text, orginalImage: imageView.image, memedImage: memeImage)
     }
+    
+    @IBAction func onCancel(_ sender: Any) {
+        toggleImageEditorUi(isHidden: true)
+        
+        imageView.image = nil
+        
+        // Reset fields texts
+        topTextField.text = "TOP"
+        bottomTextField.text = "BOTTOM"
+    }
+    
     
 }
 

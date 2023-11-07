@@ -24,12 +24,6 @@
                                             <action selector="pickFromGallery:" destination="BYZ-38-t0r" id="7mq-Qc-4Lm"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Nup-wN-jjZ"/>
-                                    <barButtonItem title="Share" image="square.and.arrow.up" catalog="system" id="kid-7R-2CG">
-                                        <connections>
-                                            <action selector="shareImage:" destination="BYZ-38-t0r" id="AOQ-vP-0Re"/>
-                                        </connections>
-                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Z8I-G1-u9w"/>
                                     <barButtonItem title="Shoot" id="JfQ-7y-KsD">
                                         <connections>
@@ -39,15 +33,34 @@
                                 </items>
                             </toolbar>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KNC-eb-HaQ">
-                                <rect key="frame" x="16" y="75" width="361" height="678"/>
+                                <rect key="frame" x="16" y="176" width="361" height="500"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="500" id="vtN-zl-Qpy"/>
+                                </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NSE-Pt-WWm">
-                                <rect key="frame" x="16" y="75" width="361" height="34"/>
+                                <rect key="frame" x="16" y="134" width="361" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j4D-Th-Jhe">
+                                <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                                <items>
+                                    <barButtonItem title="Share" image="square.and.arrow.up" catalog="system" id="kid-7R-2CG">
+                                        <connections>
+                                            <action selector="shareImage:" destination="BYZ-38-t0r" id="AOQ-vP-0Re"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Nup-wN-jjZ"/>
+                                    <barButtonItem title="Cancel" id="UYQ-dz-Lwo">
+                                        <connections>
+                                            <action selector="onCancel:" destination="BYZ-38-t0r" id="RJp-ZU-vM3"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q4h-ZS-788">
-                                <rect key="frame" x="16" y="719" width="361" height="34"/>
+                                <rect key="frame" x="16" y="684" width="361" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
@@ -55,31 +68,34 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="AMk-kc-ZZu" firstAttribute="top" secondItem="KNC-eb-HaQ" secondAttribute="bottom" constant="16" id="09h-na-Rvn"/>
-                            <constraint firstItem="NSE-Pt-WWm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="1gi-F8-dmz"/>
-                            <constraint firstItem="Q4h-ZS-788" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="2GN-Fs-maG"/>
-                            <constraint firstAttribute="trailing" secondItem="Q4h-ZS-788" secondAttribute="trailing" constant="16" id="3T1-Qq-go0"/>
-                            <constraint firstItem="AMk-kc-ZZu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="68f-V2-Zs4"/>
-                            <constraint firstItem="AMk-kc-ZZu" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="FPX-QF-llx"/>
-                            <constraint firstItem="NSE-Pt-WWm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Kse-G9-MG4"/>
-                            <constraint firstItem="AMk-kc-ZZu" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Swg-0z-LBh"/>
-                            <constraint firstItem="KNC-eb-HaQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="Y9y-mT-9Oe"/>
-                            <constraint firstAttribute="trailing" secondItem="NSE-Pt-WWm" secondAttribute="trailing" constant="16" id="YbY-Gq-vVg"/>
-                            <constraint firstItem="Q4h-ZS-788" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bvJ-Vb-Zt7"/>
-                            <constraint firstItem="NSE-Pt-WWm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="g1A-ub-hcu"/>
-                            <constraint firstItem="AMk-kc-ZZu" firstAttribute="top" secondItem="Q4h-ZS-788" secondAttribute="bottom" constant="16" id="lTM-sf-jYV"/>
-                            <constraint firstItem="KNC-eb-HaQ" firstAttribute="centerX" secondItem="AMk-kc-ZZu" secondAttribute="centerX" id="ohq-Kd-yXx"/>
-                            <constraint firstItem="KNC-eb-HaQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="qtG-Tg-3CB"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="AMk-kc-ZZu" secondAttribute="bottom" id="wmu-XJ-DHw"/>
+                            <constraint firstItem="AMk-kc-ZZu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1jS-ZS-Yod"/>
+                            <constraint firstItem="NSE-Pt-WWm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="34N-0X-iGM"/>
+                            <constraint firstItem="KNC-eb-HaQ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="46U-zD-RJ7"/>
+                            <constraint firstItem="AMk-kc-ZZu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="53z-I1-Eg9"/>
+                            <constraint firstItem="j4D-Th-Jhe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="8et-J2-9q3"/>
+                            <constraint firstItem="AMk-kc-ZZu" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="9dK-37-LAr"/>
+                            <constraint firstItem="Q4h-ZS-788" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="M01-ig-x9n"/>
+                            <constraint firstItem="j4D-Th-Jhe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="NA6-wP-r4N"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KNC-eb-HaQ" secondAttribute="trailing" constant="16" id="Nt6-FA-AO0"/>
+                            <constraint firstItem="j4D-Th-Jhe" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="VTv-9d-PMk"/>
+                            <constraint firstItem="KNC-eb-HaQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="YIL-SG-l5H"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NSE-Pt-WWm" secondAttribute="trailing" constant="16" id="a95-fx-dX6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Q4h-ZS-788" secondAttribute="trailing" constant="16" id="cRD-VX-jzv"/>
+                            <constraint firstItem="AMk-kc-ZZu" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="gqE-Wp-bv2"/>
+                            <constraint firstItem="j4D-Th-Jhe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jek-2b-lri"/>
+                            <constraint firstItem="NSE-Pt-WWm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="omD-tV-OpK"/>
+                            <constraint firstItem="KNC-eb-HaQ" firstAttribute="top" secondItem="NSE-Pt-WWm" secondAttribute="bottom" constant="8" id="qwy-XZ-HSl"/>
+                            <constraint firstItem="Q4h-ZS-788" firstAttribute="top" secondItem="KNC-eb-HaQ" secondAttribute="bottom" constant="8" id="rHk-O9-9au"/>
+                            <constraint firstItem="KNC-eb-HaQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="te6-Ms-mVw"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="bottomTextField" destination="Q4h-ZS-788" id="4Lf-ii-sdS"/>
+                        <outlet property="bottomToolbar" destination="AMk-kc-ZZu" id="NXV-lb-j3Q"/>
                         <outlet property="imageView" destination="KNC-eb-HaQ" id="wSt-kl-HkP"/>
-                        <outlet property="shareButton" destination="kid-7R-2CG" id="7YP-ol-Tes"/>
                         <outlet property="shootButton" destination="JfQ-7y-KsD" id="R6u-ke-dLk"/>
-                        <outlet property="toolbar" destination="AMk-kc-ZZu" id="3iq-kc-EME"/>
                         <outlet property="topTextField" destination="NSE-Pt-WWm" id="bx5-0S-sbW"/>
+                        <outlet property="topToolbar" destination="j4D-Th-Jhe" id="cgM-jJ-Y4b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
