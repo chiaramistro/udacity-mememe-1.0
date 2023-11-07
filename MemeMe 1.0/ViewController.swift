@@ -123,7 +123,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @objc func keyboardWillHide(_ notification:Notification) {
         print("keyboardWillHide()")
-        self.view.frame.origin.y = 0
+        view.frame.origin.y = 0
     }
     
     @objc func keyboardWillShow(_ notification:Notification) {
@@ -131,8 +131,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         if let keyboardSizeValue = getKeyboardSize(notification: notification) {
             // Apply keyboard adjustment only to bottom text field
-                if bottomTextField.isFirstResponder && self.view.frame.origin.y == 0 {
-                    self.view.frame.origin.y -= keyboardSizeValue.height
+                if bottomTextField.isFirstResponder && view.frame.origin.y == 0 {
+                    view.frame.origin.y -= keyboardSizeValue.height
                 }
             }
     }
@@ -212,8 +212,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         toggleToolbars(isHidden: true)
         
         // Create snapshot for meme image
-        UIGraphicsBeginImageContext(self.view.frame.size)
-        view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
+        UIGraphicsBeginImageContext(view.frame.size)
+        view.drawHierarchy(in: view.frame, afterScreenUpdates: true)
         let memedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
