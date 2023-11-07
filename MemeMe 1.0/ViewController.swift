@@ -34,7 +34,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        setupTextFields()
+        setupTextField(textField: topTextField, text: "TOP")
+        setupTextField(textField: bottomTextField, text: "BOTTOM")
         
         toggleImageEditorUi(isHidden: true)
     }
@@ -138,25 +139,22 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     // MARK: Text fields actions
     
-    func setupTextFields() {
+    func setupTextField(textField: UITextField, text: String) {
         // Fields need delegation for keyboard actions
-        topTextField.delegate = self
-        bottomTextField.delegate = self
+        textField.delegate = self
         
         // Initial text
-        topTextField.text = "TOP"
-        bottomTextField.text = "BOTTOM"
+        textField.text = text
+
+        // Set style for field
+        textField.defaultTextAttributes = memeTextAttributes
+        
+        // Align text to center
+        textField.textAlignment = .center
         
         // No border around input field
-        topTextField.borderStyle = .none
-        bottomTextField.borderStyle = .none
+        textField.borderStyle = .none
         
-        // Set style for field
-        topTextField.defaultTextAttributes = memeTextAttributes
-        bottomTextField.defaultTextAttributes = memeTextAttributes
-        
-        topTextField.textAlignment = .center
-        bottomTextField.textAlignment = .center
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
