@@ -48,7 +48,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
          subscribeToKeyboardNotifications()
         
         // The Camera button is disabled when app is run on devices without a camera, such as the simulator.
-        shootButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+        #if targetEnvironment(simulator)
+          // your simulator code
+            shootButton.isEnabled = false
+        #else
+          // your real device code
+            shootButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+        #endif
     }
     
     override func viewWillDisappear(_ animated: Bool) {
