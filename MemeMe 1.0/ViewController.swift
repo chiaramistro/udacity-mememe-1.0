@@ -25,8 +25,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         NSAttributedString.Key.strokeColor: UIColor.black,
         NSAttributedString.Key.foregroundColor: UIColor.white,
         NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-        NSAttributedString.Key.strokeWidth: 2.0,
+        NSAttributedString.Key.strokeWidth: -3.0,
     ]
+    
+    // MARK: Views
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -152,6 +154,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         // Set style for field
         topTextField.defaultTextAttributes = memeTextAttributes
         bottomTextField.defaultTextAttributes = memeTextAttributes
+        
+        topTextField.textAlignment = .center
+        bottomTextField.textAlignment = .center
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
