@@ -19,6 +19,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
     
+    @IBOutlet weak var toolbar: UIToolbar!
+    
     // The font and style used to display the meme text is easy to read: bold, all caps, white with a black outline, and shrink to fit.
     let memeTextAttributes: [NSAttributedString.Key: Any] = [
         NSAttributedString.Key.strokeColor: UIColor.black,
@@ -123,16 +125,24 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func generateMemedImage() -> UIImage {
-        UIGraphicsBeginImageContext(imageView.frame.size)
-
-        view.drawHierarchy(in: imageView.frame, afterScreenUpdates: true)
-
-        // Snapshot Image From My View
-        let memedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-
-        UIGraphicsGetImageFromCurrentImageContext()
+        // Hide toolbar
+        toggleToolbar(isHidden: true)
         
+        // Create snapshot for meme image
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
+        let memedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        
+        // Show toolbar
+        toggleToolbar(isHidden: false)
+        
+        // Return generated meme image
         return memedImage
+    }
+    
+    func toggleToolbar(isHidden: Bool) {
+        toolbar.isHidden = isHidden
     }
     
     func saveMeme(memeImage: UIImage) {

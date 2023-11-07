@@ -78,6 +78,7 @@
                         <outlet property="imageView" destination="KNC-eb-HaQ" id="wSt-kl-HkP"/>
                         <outlet property="shareButton" destination="kid-7R-2CG" id="7YP-ol-Tes"/>
                         <outlet property="shootButton" destination="JfQ-7y-KsD" id="R6u-ke-dLk"/>
+                        <outlet property="toolbar" destination="AMk-kc-ZZu" id="3iq-kc-EME"/>
                         <outlet property="topTextField" destination="NSE-Pt-WWm" id="bx5-0S-sbW"/>
                     </connections>
                 </viewController>
