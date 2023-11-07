@@ -33,12 +33,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        // Fields need delegation for keyboard actions
-        topTextField.delegate = self
-        bottomTextField.delegate = self
-        
-        topTextField.text = "TOP"
-        bottomTextField.text = "BOTTOM"
+        setupTextFields()
         
         toggleImageEditorUi(isHidden: true)
         
@@ -140,6 +135,22 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let userInfo = notification.userInfo
         let keyboardSize = userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue // of CGRect
         return keyboardSize.cgRectValue
+    }
+    
+    // MARK: Text fields actions
+    
+    func setupTextFields() {
+        // Fields need delegation for keyboard actions
+        topTextField.delegate = self
+        bottomTextField.delegate = self
+        
+        // Initial text
+        topTextField.text = "TOP"
+        bottomTextField.text = "BOTTOM"
+        
+        // No border around input field
+        topTextField.borderStyle = .none
+        bottomTextField.borderStyle = .none
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
