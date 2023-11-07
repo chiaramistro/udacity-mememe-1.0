@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     // The app has a social share button that uses the “Action” icon built into iOS.
     @IBOutlet weak var shareButton: UIBarButtonItem!
@@ -32,6 +32,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        // Fields need delegation for keyboard actions
+        topTextField.delegate = self
+        bottomTextField.delegate = self
+        
         topTextField.text = "TOP"
         bottomTextField.text = "BOTTOM"
         
@@ -42,10 +47,22 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         print("viewWillAppear()")
+        
+         subscribeToKeyboardNotifications()
         
         // The Camera button is disabled when app is run on devices without a camera, such as the simulator.
         shootButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        print("viewWillDisappear()")
+        
+        unsubscribeFromKeyboardNotifications()
     }
     
     func toggleImageEditorUi(isHidden: Bool) {
@@ -88,6 +105,50 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
         
         dismiss(animated: true, completion: nil)
+    }
+    
+    // MARK: Keyboard actions
+    // The text field that the user is currently editing remains fully visible with the keyboard on screen. For the bottom text field this is achieved by moving the entire view up to keep the text field on screen, then back after the keyboard is dismissed.
+    
+    func subscribeToKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    func unsubscribeFromKeyboardNotifications() {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillHide(_ notification:Notification) {
+        print("keyboardWillHide()")
+        self.view.frame.origin.y = 0
+    }
+    
+    @objc func keyboardWillShow(_ notification:Notification) {
+        print("keyboardWillShow()")
+        
+        if let keyboardSizeValue = getKeyboardSize(notification: notification) {
+            // Apply keyboard adjustment only to bottom text field
+                if bottomTextField.isFirstResponder && self.view.frame.origin.y == 0 {
+                    self.view.frame.origin.y -= keyboardSizeValue.height
+                }
+            }
+    }
+    
+    func getKeyboardSize(notification: Notification) -> CGRect! {
+        let userInfo = notification.userInfo
+        let keyboardSize = userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue // of CGRect
+        return keyboardSize.cgRectValue
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print("textFieldShouldReturn()")
+
+        // Keyboard starts editing becomes first responder
+        textField.resignFirstResponder() // Keybaord dismiss
+
+        return true
     }
 
     // MARK: Share actions
