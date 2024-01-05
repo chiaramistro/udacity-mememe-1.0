@@ -193,10 +193,10 @@
             </objects>
             <point key="canvasLocation" x="-1257" y="1462"/>
         </scene>
-        <!--View Controller-->
+        <!--Meme Collection View Controller-->
         <scene sceneID="QFu-RF-gFK">
             <objects>
-                <viewController id="d7o-70-Gzi" sceneMemberID="viewController">
+                <viewController id="d7o-70-Gzi" customClass="MemeCollectionViewController" customModule="MemeMe_1_0" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sgh-tA-nCz">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

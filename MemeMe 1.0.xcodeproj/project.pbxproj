@@ -15,6 +15,7 @@
 		E954632F2AE95384007D8F36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E954632D2AE95384007D8F36 /* LaunchScreen.storyboard */; };
 		E9C56AF72AF93AFC00903D82 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C56AF62AF93AFC00903D82 /* Meme.swift */; };
 		E9DF4CDE2B484F1500D15851 /* MemeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DF4CDD2B484F1500D15851 /* MemeTableViewController.swift */; };
+		E9DF4CE02B4851C500D15851 /* MemeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DF4CDF2B4851C500D15851 /* MemeCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		E95463302AE95384007D8F36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9C56AF62AF93AFC00903D82 /* Meme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
 		E9DF4CDD2B484F1500D15851 /* MemeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeTableViewController.swift; sourceTree = "<group>"; };
+		E9DF4CDF2B4851C500D15851 /* MemeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				E95463302AE95384007D8F36 /* Info.plist */,
 				E9C56AF62AF93AFC00903D82 /* Meme.swift */,
 				E9DF4CDD2B484F1500D15851 /* MemeTableViewController.swift */,
+				E9DF4CDF2B4851C500D15851 /* MemeCollectionViewController.swift */,
 			);
 			path = "MemeMe 1.0";
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 				E9C56AF72AF93AFC00903D82 /* Meme.swift in Sources */,
 				E95463232AE95382007D8F36 /* AppDelegate.swift in Sources */,
 				E9DF4CDE2B484F1500D15851 /* MemeTableViewController.swift in Sources */,
+				E9DF4CE02B4851C500D15851 /* MemeCollectionViewController.swift in Sources */,
 				E95463252AE95382007D8F36 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
