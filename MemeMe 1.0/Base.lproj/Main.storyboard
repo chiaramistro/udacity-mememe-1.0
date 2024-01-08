@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="d7o-70-Gzi" kind="relationship" relationship="rootViewController" id="Sjj-1h-0zB"/>
+                        <segue destination="rLt-GE-bfF" kind="relationship" relationship="rootViewController" id="TMr-bV-pYn"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EYd-o2-JGi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -155,7 +156,7 @@
         <!--Meme Table View Controller-->
         <scene sceneID="Y1n-eG-MSF">
             <objects>
-                <tableViewController id="rrT-e3-U0d" customClass="MemeTableViewController" customModule="MemeMe_1_0" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MemeTableViewController" id="rrT-e3-U0d" customClass="MemeTableViewController" customModule="MemeMe_1_0" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="YZp-gL-PPU">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -207,27 +208,52 @@
             <point key="canvasLocation" x="-1257" y="1462"/>
         </scene>
         <!--Meme Collection View Controller-->
-        <scene sceneID="QFu-RF-gFK">
+        <scene sceneID="ac2-u0-9Jb">
             <objects>
-                <viewController id="d7o-70-Gzi" customClass="MemeCollectionViewController" customModule="MemeMe_1_0" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Sgh-tA-nCz">
+                <collectionViewController storyboardIdentifier="MemeCollectionViewController" id="rLt-GE-bfF" customClass="MemeCollectionViewController" customModule="MemeMe_1_0" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="g15-aF-2FI">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="View c" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HmQ-ab-Wv6">
-                                <rect key="frame" x="175" y="416" width="51" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="gzh-oy-jNT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="beL-hF-fsz"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mtZ-gg-2id" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DEr-6n-XLW">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MemeCollectionViewCell" id="G9C-zA-6WO" customClass="MemeCollectionViewCell" customModule="MemeMe_1_0" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="IzB-Fb-uqR">
+                                    <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="koD-8d-ZB0">
+                                            <rect key="frame" x="64" y="64" width="0.0" height="0.0"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="koD-8d-ZB0" firstAttribute="centerX" secondItem="IzB-Fb-uqR" secondAttribute="centerX" id="8Jh-a6-Pio"/>
+                                        <constraint firstItem="koD-8d-ZB0" firstAttribute="centerY" secondItem="IzB-Fb-uqR" secondAttribute="centerY" id="w4C-58-emm"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <connections>
+                                    <outlet property="memeText" destination="koD-8d-ZB0" id="nPr-4u-z91"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="rLt-GE-bfF" id="GOD-0v-yem"/>
+                            <outlet property="delegate" destination="rLt-GE-bfF" id="2bA-ra-1Dd"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="MoK-rR-Tio"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H7q-bz-Q7k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-457" y="756"/>
         </scene>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E944FE782B4C580600FB2FC3 /* MemeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E944FE772B4C580600FB2FC3 /* MemeCollectionViewCell.swift */; };
 		E95463232AE95382007D8F36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95463222AE95382007D8F36 /* AppDelegate.swift */; };
 		E95463252AE95382007D8F36 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95463242AE95382007D8F36 /* SceneDelegate.swift */; };
 		E95463272AE95382007D8F36 /* AddMemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95463262AE95382007D8F36 /* AddMemeViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E944FE772B4C580600FB2FC3 /* MemeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeCollectionViewCell.swift; sourceTree = "<group>"; };
 		E954631F2AE95382007D8F36 /* MemeMe 1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MemeMe 1.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E95463222AE95382007D8F36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E95463242AE95382007D8F36 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				E9C56AF62AF93AFC00903D82 /* Meme.swift */,
 				E9DF4CDD2B484F1500D15851 /* MemeTableViewController.swift */,
 				E9DF4CDF2B4851C500D15851 /* MemeCollectionViewController.swift */,
+				E944FE772B4C580600FB2FC3 /* MemeCollectionViewCell.swift */,
 			);
 			path = "MemeMe 1.0";
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 				E9C56AF72AF93AFC00903D82 /* Meme.swift in Sources */,
 				E95463232AE95382007D8F36 /* AppDelegate.swift in Sources */,
 				E9DF4CDE2B484F1500D15851 /* MemeTableViewController.swift in Sources */,
+				E944FE782B4C580600FB2FC3 /* MemeCollectionViewCell.swift in Sources */,
 				E9DF4CE02B4851C500D15851 /* MemeCollectionViewController.swift in Sources */,
 				E95463252AE95382007D8F36 /* SceneDelegate.swift in Sources */,
 			);

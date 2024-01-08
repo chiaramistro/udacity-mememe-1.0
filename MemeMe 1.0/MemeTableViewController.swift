@@ -9,15 +9,14 @@ import UIKit
 
 class MemeTableViewController: UITableViewController {
     
-    let memeArray: [String] = [
-        "Meme 1",
-        "Meme 2",
-        "Meme 3",
-    ]
+    var memeArray = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addMeme))
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        self.memeArray = appDelegate.memes
+        print(self.memeArray)
     }
     
     @objc func addMeme() {
@@ -42,6 +41,7 @@ class MemeTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Navigate on click item \((indexPath as NSIndexPath).row)")
+        // TODO navigation to details
     }
 
 }
