@@ -41,7 +41,9 @@ class MemeTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Navigate on click item \((indexPath as NSIndexPath).row)")
-        // TODO navigation to details
+        let detailController = self.storyboard!.instantiateViewController(withIdentifier: "MemeDetailViewController") as! MemeDetailViewController
+        detailController.meme = self.memeArray[(indexPath as NSIndexPath).row]
+        self.navigationController!.pushViewController(detailController, animated: true)
     }
 
 }

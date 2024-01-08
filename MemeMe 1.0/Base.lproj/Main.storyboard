@@ -192,6 +192,55 @@
             <point key="canvasLocation" x="-457" y="84"/>
         </scene>
         <!--Navigation Controller-->
+        <scene sceneID="DkW-rJ-0D1">
+            <objects>
+                <navigationController id="Gtq-23-EhP" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VFn-2I-weN">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="XAD-3S-3fa" kind="relationship" relationship="rootViewController" id="iBq-1j-Jhf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9hj-UN-Ucf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1257" y="2163"/>
+        </scene>
+        <!--Meme Detail View Controller-->
+        <scene sceneID="zwp-jG-p5i">
+            <objects>
+                <viewController storyboardIdentifier="MemeDetailViewController" id="XAD-3S-3fa" customClass="MemeDetailViewController" customModule="MemeMe_1_0" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gj5-WQ-XCz">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qul-a7-WY9">
+                                <rect key="frame" x="16" y="426" width="361" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="SCF-TI-9jA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Qul-a7-WY9" firstAttribute="centerX" secondItem="gj5-WQ-XCz" secondAttribute="centerX" id="K4t-W2-wfJ"/>
+                            <constraint firstItem="Qul-a7-WY9" firstAttribute="leading" secondItem="gj5-WQ-XCz" secondAttribute="leadingMargin" id="QIw-ia-Y9G"/>
+                            <constraint firstItem="Qul-a7-WY9" firstAttribute="centerY" secondItem="gj5-WQ-XCz" secondAttribute="centerY" id="aYx-52-Lmv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Qul-a7-WY9" secondAttribute="trailing" id="uyH-ER-JZx"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="LUw-b8-4UV"/>
+                    <connections>
+                        <outlet property="memeText" destination="Qul-a7-WY9" id="SC6-rg-KVr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qda-tJ-A8G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-457.25190839694653" y="2162.6760563380285"/>
+        </scene>
+        <!--Navigation Controller-->
         <scene sceneID="bgy-7d-sVc">
             <objects>
                 <navigationController id="LfP-Jd-ibm" sceneMemberID="viewController">
