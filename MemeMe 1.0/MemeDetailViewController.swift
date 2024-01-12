@@ -9,13 +9,13 @@ import UIKit
 
 class MemeDetailViewController: UIViewController {
     
-    var meme: String = ""
+    var meme: Meme!
     
     @IBOutlet weak var memeText: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        memeText.text = meme
+        memeText.text = meme.topText + " " + meme.bottomText
     }
     
 }

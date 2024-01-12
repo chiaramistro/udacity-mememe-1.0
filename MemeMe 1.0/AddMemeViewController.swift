@@ -231,6 +231,10 @@ class AddMemeViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     func saveMeme(memeImage: UIImage) {
         let meme = Meme(topText: topTextField.text, bottomText: bottomTextField.text, orginalImage: imageView.image, memedImage: memeImage)
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.memes.append(meme)
+        print("New meme list \(appDelegate.memes)")
     }
     
     @IBAction func onCancel(_ sender: Any) {

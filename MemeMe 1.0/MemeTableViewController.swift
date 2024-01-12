@@ -9,14 +9,16 @@ import UIKit
 
 class MemeTableViewController: UITableViewController {
     
-    var memeArray = [String]()
+    @IBOutlet var tableViewEl: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addMeme))
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        self.memeArray = appDelegate.memes
-        print(self.memeArray)
+    }
+        
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableViewEl.reloadData()
     }
     
     @objc func addMeme() {
@@ -26,23 +28,26 @@ class MemeTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.memeArray.count
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        return appDelegate.memes.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MemeTableViewCell")!
-        let meme = self.memeArray[(indexPath as NSIndexPath).row]
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let meme = appDelegate.memes[(indexPath as NSIndexPath).row]
         
         // Set the name
-        cell.textLabel?.text = meme
-
+        cell.textLabel?.text = meme.topText + " " + meme.bottomText
+        
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Navigate on click item \((indexPath as NSIndexPath).row)")
         let detailController = self.storyboard!.instantiateViewController(withIdentifier: "MemeDetailViewController") as! MemeDetailViewController
-        detailController.meme = self.memeArray[(indexPath as NSIndexPath).row]
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        detailController.meme = appDelegate.memes[(indexPath as NSIndexPath).row]
         self.navigationController!.pushViewController(detailController, animated: true)
     }
 

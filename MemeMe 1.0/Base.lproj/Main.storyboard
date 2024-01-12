@@ -186,6 +186,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="0iE-O3-v5y"/>
+                    <connections>
+                        <outlet property="tableViewEl" destination="YZp-gL-PPU" id="IWv-9H-YCV"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GFk-7s-FFb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -301,6 +304,9 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="MoK-rR-Tio"/>
+                    <connections>
+                        <outlet property="collectionViewEl" destination="g15-aF-2FI" id="t3F-hg-YRy"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H7q-bz-Q7k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
