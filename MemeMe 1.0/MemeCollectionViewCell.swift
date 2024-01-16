@@ -9,6 +9,6 @@ import UIKit
 
 class MemeCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var memeText: UILabel!
+    @IBOutlet weak var memeImage: UIImageView!
     
 }

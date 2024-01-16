@@ -39,6 +39,7 @@ class MemeTableViewController: UITableViewController {
         
         // Set the name
         cell.textLabel?.text = meme.topText + " " + meme.bottomText
+        cell.imageView?.image = meme.memedImage
         
         return cell
     }

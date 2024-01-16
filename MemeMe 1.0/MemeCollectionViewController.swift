@@ -10,10 +10,18 @@ import UIKit
 class MemeCollectionViewController: UICollectionViewController {
     
     @IBOutlet var collectionViewEl: UICollectionView!
+    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addMeme))
+        
+        let space: CGFloat = 3.0
+        let dimension = (view.frame.size.width - (2 * space)) / 3.0
+
+        flowLayout.minimumInteritemSpacing = space
+        flowLayout.minimumLineSpacing = space
+        flowLayout.itemSize = CGSize(width: dimension, height: dimension)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,7 +46,7 @@ class MemeCollectionViewController: UICollectionViewController {
         let meme = appDelegate.memes[(indexPath as NSIndexPath).row]
 
         // Set the name
-        cell.memeText.text = meme.topText + " " + meme.bottomText
+        cell.memeImage.image = meme.memedImage
 
         return cell
     }
