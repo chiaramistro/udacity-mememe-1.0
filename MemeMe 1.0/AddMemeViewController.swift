@@ -245,6 +245,9 @@ class AddMemeViewController: UIViewController, UIImagePickerControllerDelegate, 
         // Reset fields texts
         topTextField.text = "TOP"
         bottomTextField.text = "BOTTOM"
+        
+        // Return to sent memes view
+        self.dismiss(animated: true, completion: nil)
     }
     
     
