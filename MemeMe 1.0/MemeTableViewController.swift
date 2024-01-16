@@ -23,8 +23,8 @@ class MemeTableViewController: UITableViewController {
     }
     
     @objc func addMeme() {
-        var controller: AddMemeViewController = self.storyboard?.instantiateViewController(withIdentifier: "AddMemeViewController") as! AddMemeViewController
-
+        let controller: AddMemeViewController = self.storyboard?.instantiateViewController(withIdentifier: "AddMemeViewController") as! AddMemeViewController
+        controller.modalPresentationStyle = .fullScreen
         present(controller, animated: true, completion: nil)
     }
     
