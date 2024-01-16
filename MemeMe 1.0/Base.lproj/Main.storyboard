@@ -162,22 +162,41 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemeTableViewCell" textLabel="wVt-YY-4yz" style="IBUITableViewCellStyleDefault" id="Zli-gz-VTz" customClass="MemeTableViewCell">
-                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemeTableViewCell" rowHeight="100" id="Zli-gz-VTz" customClass="MemeTableViewCell" customModule="MemeMe_1_0">
+                                <rect key="frame" x="0.0" y="50" width="393" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Zli-gz-VTz" id="06c-tu-Mgs">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wVt-YY-4yz">
-                                            <rect key="frame" x="20" y="0.0" width="353" height="43.666667938232422"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ASl-Pc-w2R">
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
+                                            <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="150" id="E4d-IS-k7N"/>
+                                                <constraint firstAttribute="width" constant="200" id="p9u-Nm-8ZX"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1a1-sw-UYU">
+                                            <rect key="frame" x="208" y="40" width="157" height="20"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ASl-Pc-w2R" firstAttribute="leading" secondItem="06c-tu-Mgs" secondAttribute="leading" id="46e-5N-uhO"/>
+                                        <constraint firstAttribute="bottom" secondItem="ASl-Pc-w2R" secondAttribute="bottom" id="GBN-Gk-fhx"/>
+                                        <constraint firstItem="1a1-sw-UYU" firstAttribute="centerY" secondItem="06c-tu-Mgs" secondAttribute="centerY" id="HXK-aj-JeF"/>
+                                        <constraint firstItem="ASl-Pc-w2R" firstAttribute="top" secondItem="06c-tu-Mgs" secondAttribute="top" id="UJ8-ig-LRn"/>
+                                        <constraint firstItem="1a1-sw-UYU" firstAttribute="leading" secondItem="ASl-Pc-w2R" secondAttribute="trailing" constant="8" id="YVD-fg-JnB"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="1a1-sw-UYU" secondAttribute="trailing" constant="8" id="roh-oQ-SVr"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="memeImage" destination="ASl-Pc-w2R" id="On3-ui-VQJ"/>
+                                    <outlet property="memeText" destination="1a1-sw-UYU" id="VmY-19-3Yz"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -192,7 +211,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GFk-7s-FFb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-457" y="84"/>
+            <point key="canvasLocation" x="-457.25190839694653" y="83.802816901408448"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DkW-rJ-0D1">
@@ -315,6 +334,9 @@
     </scenes>
     <resources>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
