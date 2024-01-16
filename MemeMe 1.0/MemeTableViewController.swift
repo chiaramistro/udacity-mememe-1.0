@@ -52,5 +52,20 @@ class MemeTableViewController: UITableViewController {
         detailController.meme = appDelegate.memes[(indexPath as NSIndexPath).row]
         self.navigationController!.pushViewController(detailController, animated: true)
     }
-
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { _, _, completionHandler in
+            print("Delete item on index \((indexPath as NSIndexPath).row)")
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.memes.remove(at: (indexPath as NSIndexPath).row)
+            self.tableViewEl.reloadData()
+            completionHandler(true)
+        }
+        deleteAction.backgroundColor = .red
+        deleteAction.image = UIImage(systemName: "trash")
+        let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+        configuration.performsFirstActionWithFullSwipe = false
+        return configuration
+    }
+    
 }
