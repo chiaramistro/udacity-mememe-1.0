@@ -11,11 +11,11 @@ class MemeDetailViewController: UIViewController {
     
     var meme: Meme!
     
-    @IBOutlet weak var memeText: UILabel!
+    @IBOutlet weak var memeImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        memeText.text = meme.topText + " " + meme.bottomText
+        memeImage.image = meme.memedImage
     }
     
 }
