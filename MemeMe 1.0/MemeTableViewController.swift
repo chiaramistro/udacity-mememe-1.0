@@ -13,6 +13,7 @@ class MemeTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Set navigation bar preferences
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(addMeme))
         navigationItem.title = "Sent Memes"
     }
@@ -22,11 +23,15 @@ class MemeTableViewController: UITableViewController {
         tableViewEl.reloadData()
     }
     
+    // MARK: Add new meme
+    
     @objc func addMeme() {
         let controller: AddMemeViewController = self.storyboard?.instantiateViewController(withIdentifier: "AddMemeViewController") as! AddMemeViewController
         controller.modalPresentationStyle = .fullScreen
         present(controller, animated: true, completion: nil)
     }
+    
+    // MARK: Table view
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -38,7 +43,7 @@ class MemeTableViewController: UITableViewController {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let meme = appDelegate.memes[(indexPath as NSIndexPath).row]
         
-        // Set the name
+        // Set the meme image and texts (both top and bottom text)
         cell.memeText.text = meme.topText + " " + meme.bottomText
         cell.memeImage.image = meme.memedImage
         

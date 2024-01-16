@@ -14,9 +14,11 @@ class MemeCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Set navigation bar preferences
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(addMeme))
         navigationItem.title = "Sent Memes"
         
+        // Set collection view layout, 3 pictures per row with some spacing inbetween
         let space: CGFloat = 3.0
         let dimension = (view.frame.size.width - (2 * space)) / 3.0
 
@@ -30,11 +32,15 @@ class MemeCollectionViewController: UICollectionViewController {
         collectionViewEl.reloadData()
     }
     
+    // MARK: Add new meme
+    
     @objc func addMeme() {
         let controller: AddMemeViewController = self.storyboard?.instantiateViewController(withIdentifier: "AddMemeViewController") as! AddMemeViewController
         controller.modalPresentationStyle = .fullScreen
         present(controller, animated: true, completion: nil)
     }
+    
+    // MARK: Collection view
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -46,7 +52,7 @@ class MemeCollectionViewController: UICollectionViewController {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let meme = appDelegate.memes[(indexPath as NSIndexPath).row]
 
-        // Set the name
+        // Set the meme image
         cell.memeImage.image = meme.memedImage
 
         return cell

@@ -9,6 +9,7 @@ import UIKit
 
 class MemeTableViewCell: UITableViewCell {
     
+    // MARK: Properties of the single table view cell
     @IBOutlet weak var memeImage: UIImageView!
     @IBOutlet weak var memeText: UILabel!
     
