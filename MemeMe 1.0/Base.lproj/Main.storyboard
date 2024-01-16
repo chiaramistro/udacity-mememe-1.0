@@ -9,11 +9,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View-->
+        <!--Navigation Controller-->
         <scene sceneID="SQZ-G4-LLY">
             <objects>
                 <navigationController id="Sxu-I9-a3F" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="View" id="lxd-qC-3ae"/>
+                    <tabBarItem key="tabBarItem" title="" image="square.grid.3x3.fill" catalog="system" id="lxd-qC-3ae"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="FZf-kC-HQo">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -136,11 +136,11 @@
             </objects>
             <point key="canvasLocation" x="-2161" y="374"/>
         </scene>
-        <!--Table-->
+        <!--Navigation Controller-->
         <scene sceneID="YNG-zQ-xo5">
             <objects>
                 <navigationController id="zNw-aW-EZV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Table" id="0u5-kL-dJo"/>
+                    <tabBarItem key="tabBarItem" title="" image="list.bullet" catalog="system" id="0u5-kL-dJo"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zcM-eK-TwK">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -333,7 +333,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="list.bullet" catalog="system" width="128" height="87"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+        <image name="square.grid.3x3.fill" catalog="system" width="128" height="113"/>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
